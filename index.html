@@ -7,17 +7,19 @@
     <!-- <script src="destinations.js"></script> -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-   <link rel="stylesheet" href="destinations.css">
-   <link rel="icon" type="image/x-icon" href="map.png">
-    
+    <link rel="stylesheet" href="destinations.css">
+    <link rel="icon" type="image/x-icon" href="map.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Play&display=swap"> 
 </head>
 <body>
     <div class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-  <a href="#">About</a>
-  <a href="#">Services</a>
-  <a href="#">Clients</a>
-  <a href="#">Contact</a>
+  <a href="#index">Home</a>
+  <a href="#flex-co">Destinations</a>
+  <a onclick="dark()" href="#darkmode">Darkmode</a>
+  <a href="#footerId" onclick="closeNav();showContactForm()">Contact</a>
 </div>
 <span style="font-size:50px;cursor:pointer;position:fixed;top:20px;right:20px;" onclick="openNav()">&#9776;</span>
 <div>
@@ -51,6 +53,7 @@
   </div>
 
 </div>
+<div class="packages">
 <h1 class="Head"  data-aos="zoom-in-up" data-aos-duration="2000"> –––  THE WORLD AWAITS  –––</h1>
 <div class="supp">
 <div data-aos="zoom-out-right" data-aos-duration="3000"id="adj" >
@@ -111,6 +114,7 @@
         </picture>
 </div>
 </div>
+</div>
 <h1 class="Head"  data-aos="zoom-in-up" data-aos-duration="2000">––– Popular Destinations –––</h1>
 <div class="flex-co" >
     <div class="box" data-aos="zoom-in" data-aos-duration="1000" style="overflow: hidden;">
@@ -141,24 +145,59 @@
         </a>     
      </div>
 </div >
+<footer id="footerId">
+<div class="footer">
+    <div class="row">
+        <a href="#"><i class="fa fa-facebook"></i></a>
+        <a href="#"><i class="fa fa-instagram"></i></a>
+        <a href="#"><i class="fa fa-youtube"></i></a>
+        <a href="#"><i class="fa fa-twitter"></i></a>
+    </div>
+
+    <div class="row">
+        <ul>
+            <li><a onclick="showContactForm()">Contact us</a></li>
+            <li><a href="#flex-co">Our Services</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+    </div>
+
+    <div class="row">
+        NoCopyright Copyright © 2025 Destinations - All rights reserved.
+    </div>
+</div>
+
+<div id="contact-modal" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.5); z-index:2; justify-content:center; align-items:center;">
+    <div style="background:#fff; padding:30px; border-radius:8px; max-width:400px; margin:auto; position:relative;">
+        <span onclick="hideContactForm()" style="position:absolute; top:10px; right:15px; font-size:24px; cursor:pointer;">&times;</span>
+        <h2 style="margin-top:0;">Contact Us</h2>
+        <form>
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required style="width:100%;margin-bottom:10px;"><br>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" required style="width:100%;margin-bottom:10px;"><br>
+            <label for="message">Message:</label><br>
+            <textarea id="message" name="message" rows="4" required style="width:100%;margin-bottom:10px;"></textarea><br>
+            <button type="submit" style="padding:8px 16px;">Send</button>
+        </form>
+    </div>
+</div>
+
 <script>
 
     AOS.init();
 
-    
 function openNav() {
   document.getElementsByClassName("sidenav")[0].style.width = "250px";
-  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
 }
 
 function closeNav() {
   document.getElementsByClassName("sidenav")[0].style.width = "0";
-  document.body.style.backgroundColor = "white";
 }
-    
+
 var x=1;
 function dark(){
-    
  x+=1;  
  if(x%2==0){
     document.body.classList.toggle("dark_mode");
@@ -176,10 +215,27 @@ function dark(){
         element[i].style.color="olive";
     }  
  }
-
- 
 }
-  </script>
-    
+
+function showContactForm() {
+    document.getElementById('contact-modal').style.display = 'flex';
+}
+
+function hideContactForm() {
+    document.getElementById('contact-modal').style.display = 'none';
+}
+
+// Attach to existing contact link
+document.getElementById('contact-link').addEventListener('click', function(e) {
+    e.preventDefault();
+    showContactForm();
+});
+
+// Close modal with close button    
+document.getElementById('close-modal').addEventListener('click', function() {
+    hideContactForm();
+});
+
+</script>
 </body>
 </html>

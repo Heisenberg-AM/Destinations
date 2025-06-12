@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Payment</title>
     <link rel="stylesheet" href="styles_payment.css">
+    <link rel="icon"  type="image/x-icon" href="credit-card.png">
 </head>
+
 <body>
     <div id="payment_portal">
         <div class="h1_h3">
@@ -16,12 +18,12 @@
             <form action="/action_page.php">
                 <div class="payment_details_block">
                     <label for="payment_method" class="A">Choose payment method</label><hr>
-                    <span class="payment_selection_1" style="margin-left: 25%;">
+                    <span class="payment_selection_1">
                         <button type="button" id="cash" name="cash" onclick="showPaymentMethod('cash')"><img src="cash-svgrepo-com.svg" alt="cash">   cash</button>
                         <button type="button" id="card" name="card" onclick="showPaymentMethod('card_visa_div')"><img src="card-credit-atm-svgrepo-com.svg" alt="card">   card</button>
                         <button type="button" id="gpay" name="gpay" onclick="showPaymentMethod('gpay_paytm_paypal_div')"><img src="google-pay-primary-logo-logo-svgrepo-com.svg" alt="gpay"></button>
                     </span>
-                    <span class="payment_selection_2" style="margin-left: 30%;">
+                    <span class="payment_selection_2">
                         <button type="button" id="paytm" name="paytm" onclick="showPaymentMethod('gpay_paytm_paypal_div')"><img src="paytm-svgrepo-com.svg" alt="paytm"></button>
                         <button type="button" id="paypal" name="paypal" onclick="showPaymentMethod('gpay_paytm_paypal_div')"><img src="paypal-3-svgrepo-com.svg" alt="paypal"></button>
                         <button type="button" id="visa" name="visa" onclick="showPaymentMethod('card_visa_div')"><img src="visa-svgrepo-com.svg" alt="visa"></button>
@@ -41,7 +43,7 @@
                         <div class="gpay_paytm_paypal_div">
                             <p class="gpay_paytm_paypal">UPI PAYMENT</p><hr>
                             <div>
-                                <label for="UPI ID">Enter UPI ID:</label><br>
+                                <label for="UPI ID">Enter <span class="gpay_paytm_paypal">GPAY</span> UPI ID:</label><br>
                                 <input type="text" id="UPI_ID" name="UPI_ID" size="43" pattern="[0-9A-Za-z@.]{10}" placeholder="Enter UPI ID" required>
                             </div>
                         </div>
@@ -130,6 +132,7 @@
                 </tr>
             </table>
         </div>
-    <script src="script.js"></script>
+    <script src="script.js"></script>     
 </body>
 </html>
+</form> 
