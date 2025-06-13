@@ -945,6 +945,16 @@ margin:0% 3%;
                 container.appendChild(hotelCard);
             });
         }
+        function handleSearch(event) {
+            event.preventDefault();
+            const destination = document.getElementById('destination').value;
+            const checkin = document.getElementById('checkin').value;
+            const checkout = document.getElementById('checkout').value;
+            const rooms = document.getElementById('rooms').value;
+            const guests = document.getElementById('guests').value;
+            
+            alert(`Searching for ${rooms} room(s) for ${guests} guest(s) in ${destination} from ${checkin} to ${checkout}`);
+        }
 
         
         function toggleFilters() {
