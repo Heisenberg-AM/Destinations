@@ -139,3 +139,49 @@ function handleFormSubmit() {
   document.getElementsByClassName('bill_rooms')[0].innerHTML = rooms;
   document.getElementsByClassName('bill_amount')[0].innerHTML = '$' + total_price;
 }
+
+const canvas = document.getElementById('bg_canvas');
+const ctx = canvas.getContext('2d');
+
+if (!canvas || !ctx) {
+  console.error('Canvas or context not supported');
+}
+function resizeCanvas() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+const squares = Array.from({ length: 5 }, () => ({
+  x: Math.random() * canvas.width,
+  y: Math.random() * canvas.height,
+  size: 30 + Math.random() * 40,
+  speedX: (Math.random() - 0.5) * 2,
+  speedY: (Math.random() - 0.5) * 2,
+  angle: 0,
+  rotationSpeed: (Math.random() - 0.5) * 0.05
+}));
+
+function animate() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  squares.forEach(square => {
+    square.x += square.speedX;
+    square.y += square.speedY;
+    square.angle += square.rotationSpeed;
+
+    if (square.x < 0 || square.x > canvas.width) square.speedX *= -1;
+    if (square.y < 0 || square.y > canvas.height) square.speedY *= -1;
+
+    ctx.save();
+    ctx.translate(square.x, square.y);
+    ctx.rotate(square.angle);
+    ctx.fillStyle = 'rgba(178, 180, 180, 0.33)';
+    ctx.fillRect(-square.size / 2, -square.size / 2, square.size, square.size);
+    ctx.restore();
+  });
+
+  requestAnimationFrame(animate);
+}
+animate();
