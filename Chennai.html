@@ -40,7 +40,6 @@
             padding: 0 1rem;
         }
 
-        /* Header Styles */
         header {
             background: linear-gradient(to right, #fef3c7, #fed7aa);
             box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
@@ -141,7 +140,7 @@
             color: white;
         }
 
-        /* Search Form Styles */
+
         .search-section {
             padding: 2rem 0;
         }
@@ -207,7 +206,7 @@
             transform: scale(1.05);
         }
 
-        /* Hero Section Styles */
+
         .hero-section {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -255,7 +254,7 @@
             transform: scale(1.1);
         }
 
-        /* Results Section Styles */
+
         .results-section {
             animation: fadeIn 0.6s ease-out;
         }
@@ -322,7 +321,7 @@
             outline: none;
         }
 
-        /* Hotel Card Styles */
+
         .hotel-cards {
             display: flex;
             flex-direction: column;
@@ -476,7 +475,7 @@
             transform: scale(1.05);
         }
 
-        /* Animations */
+
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -510,7 +509,7 @@
             }
         }
 
-        /* Responsive Design */
+
         @media (min-width: 768px) {
             .search-grid {
                 grid-template-columns: repeat(5, 1fr);
@@ -536,7 +535,7 @@
             }
         }
 
-        /* Filter dropdown styles */
+
         .filter-dropdown {
             display: none;
             position: absolute;
@@ -669,11 +668,11 @@ margin:0% 3%;
     </style>
 </head>
 <body>
-    <!-- Header -->
+
     <header>
         <div class="container">
             <div class="header-content">
-                <!-- Logo Section -->
+
                 <div class="logo-section">
                     <div class="logo-circle">AU</div>
                     <div class="logo-text">
@@ -682,7 +681,7 @@ margin:0% 3%;
                     </div>
                 </div>
 
-                <!-- Navigation -->
+
                 <nav class="nav">
                     <a href="index.html">Destinations</a>
                     <a href="#">Resorts</a>
@@ -692,7 +691,7 @@ margin:0% 3%;
                     <a href="#">Reservations</a>
                 </nav>
 
-                <!-- Action Buttons -->
+
                 <div class="header-buttons">
                     <button class="btn btn-green" onclick="alert('Language/Currency selector')">EN | INR</button>
                     <a href="login_page.html"><button class="btn btn-blue" >Sign In</button></a>
@@ -701,13 +700,13 @@ margin:0% 3%;
         </div>
     </header>
 
-    <!-- Main Content -->
+
     <div class="container">
-        <!-- Search Form -->
+
         <div class="search-section">
             <form class="search-form" onsubmit="handleSearch(event)">
                 <div class="search-grid">
-                    <!-- Destination -->
+
                     <div class="search-field">
                         <div class="field-label">
                             <span>📍</span>
@@ -716,7 +715,7 @@ margin:0% 3%;
                         <input type="text" class="field-input" placeholder="Destination or hotel" value="Hyderabad" id="destination">
                     </div>
 
-                    <!-- Check-in -->
+
                     <div class="search-field">
                         <div class="field-label">
                             <span>📅</span>
@@ -725,7 +724,7 @@ margin:0% 3%;
                         <input type="date" class="field-input" id="checkin">
                     </div>
 
-                    <!-- Check-out -->
+
                     <div class="search-field">
                         <div class="field-label">
                             <span>📅</span>
@@ -734,7 +733,7 @@ margin:0% 3%;
                         <input type="date" class="field-input" id="checkout">
                     </div>
 
-                    <!-- Rooms and Guests -->
+
                     <div class="search-field">
                         <div class="field-label">
                             <span>👥</span>
@@ -755,7 +754,7 @@ margin:0% 3%;
                         </div>
                     </div>
 
-                    <!-- Search Button -->
+
                     <div style="display: flex; align-items: end;">
                         <button type="submit" class="search-button" style="width: 100%;">
                             Search Hotels
@@ -764,7 +763,7 @@ margin:0% 3%;
                 </div>
             </form>
 
-            <!-- Hero Section -->
+
             <div class="hero-section">
                 <div class="hero-text">
                     <h1 class="hero-title">Hyderabad</h1>
